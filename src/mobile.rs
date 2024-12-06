@@ -15,7 +15,7 @@ pub fn init<R: Runtime, C: DeserializeOwned>(
     api: PluginApi<R, C>,
 ) -> crate::Result<WindowInsets<R>> {
     #[cfg(target_os = "android")]
-    let handle = api.register_android_plugin("com.plugin.insets", "ExamplePlugin")?;
+    let handle = api.register_android_plugin("com.plugin.insets", "InsetPlugin")?;
     #[cfg(target_os = "ios")]
     let handle = api.register_ios_plugin(init_plugin_window_insets)?;
     Ok(WindowInsets(handle))
@@ -25,7 +25,9 @@ pub fn init<R: Runtime, C: DeserializeOwned>(
 pub struct WindowInsets<R: Runtime>(PluginHandle<R>);
 
 impl<R: Runtime> WindowInsets<R> {
-    pub fn ping(&self) -> crate::Result<InsetResponse> {
-        self.0.run_mobile_plugin("ping", ()).map_err(Into::into)
+    pub fn get_insets(&self) -> crate::Result<Insets> {
+        self.0
+            .run_mobile_plugin("getInsets", ())
+            .map_err(Into::into)
     }
 }

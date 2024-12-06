@@ -4,15 +4,7 @@ use crate::models::*;
 use crate::Result;
 use crate::WindowInsetsExt;
 
-// #[command]
-// pub(crate) async fn ping<R: Runtime>(
-//     app: AppHandle<R>,
-//     payload: PingRequest,
-// ) -> Result<PingResponse> {
-//     app.window_insets().ping(payload)
-// }
-
 #[command]
-pub(crate) async fn ping<R: Runtime>(app: AppHandle<R>) -> Result<InsetResponse> {
-    app.window_insets().ping()
+pub(crate) async fn get_insets<R: Runtime>(app: AppHandle<R>) -> Result<Insets> {
+    app.window_insets().get_insets()
 }

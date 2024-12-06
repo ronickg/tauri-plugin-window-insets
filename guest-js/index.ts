@@ -7,16 +7,6 @@ interface Insets {
   right: number;
 }
 
-interface WindowInsets {
-  systemBars: Insets;
-  gestureInsets: Insets;
-}
-
-// export async function getInsets(): Promise<WindowInsets> {
-//   return await invoke("plugin:window-insets|getInsets");
-// }
-// import { invoke } from '@tauri-apps/api/core'
-
-export async function ping(): Promise<WindowInsets> {
-  return await invoke("plugin:window-insets|ping");
+export async function getInsets(): Promise<Insets> {
+  return await invoke("plugin:window-insets|get_insets");
 }

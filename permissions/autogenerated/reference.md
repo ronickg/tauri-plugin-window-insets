@@ -3,6 +3,7 @@
 Default permissions for the plugin
 
 - `allow-ping`
+- `allow-get-insets`
 
 ## Permission Table
 

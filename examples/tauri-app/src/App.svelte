@@ -1,6 +1,6 @@
 <script>
   // import Greet from './lib/Greet.svelte'
-  import { ping } from 'tauri-plugin-window-insets-api'
+  import { getInsets } from 'tauri-plugin-window-insets-api'
 
 	let response = ''
 
@@ -10,8 +10,7 @@
 
 	function _ping() {
     // console.log("called")
-    console.log("Computed: ", getComputedStyle(document.documentElement).getPropertyValue('--status-bar-height'))
-    // ping().then(res => console.log("sadfasdf", res.system_bars.top)).catch(err => console.error(err))
+    getInsets().then(res => console.log("sadfasdf", res.top)).catch(err => console.error(err))
 		// ping("Pong!").then(updateResponse).catch(updateResponse)
 	}
 </script>

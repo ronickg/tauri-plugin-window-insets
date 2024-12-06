@@ -19,9 +19,3 @@ pub struct Insets {
     pub left: i32,
     pub right: i32,
 }
-
-#[derive(Debug, Deserialize, Serialize)]
-pub struct InsetResponse {
-    pub system_bars: Insets,
-    pub gesture_insets: Insets,
-}
