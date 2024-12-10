@@ -1,3 +1,3 @@
 [default]
 description = "Default permissions for the plugin"
-permissions = ["allow-ping", "allow-get-insets"]
+permissions = ["allow-get-insets"]

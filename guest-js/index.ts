@@ -1,6 +1,6 @@
 import { invoke } from "@tauri-apps/api/core";
 
-interface Insets {
+export interface Insets {
   top: number;
   bottom: number;
   left: number;

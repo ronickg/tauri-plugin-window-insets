@@ -1667,19 +1667,9 @@
           "const": "window-insets:allow-get-insets"
         },
         {
-          "description": "Enables the ping command without any pre-configured scope.",
-          "type": "string",
-          "const": "window-insets:allow-ping"
-        },
-        {
           "description": "Denies the get_insets command without any pre-configured scope.",
           "type": "string",
           "const": "window-insets:deny-get-insets"
-        },
-        {
-          "description": "Denies the ping command without any pre-configured scope.",
-          "type": "string",
-          "const": "window-insets:deny-ping"
         }
       ]
     },
